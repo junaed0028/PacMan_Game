@@ -48,4 +48,5 @@ if errorlevel 1 exit /b 1
 echo.
 echo Pac-Man executable created at:
 echo %ROOT%dist\PacMan\PacMan.exe
+rmdir /s /q "%ROOT%build"
 exit /b 0

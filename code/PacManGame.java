@@ -1565,8 +1565,6 @@ public class PacManGame extends JFrame {
         }
     }
 
-    /** Big "PAC-MAN" title with pink glow. */
-    /** Big "PAC-MAN" title made of pixel blocks with pink glow. */
     static class TitlePanel extends JPanel {
         // 5x7 block letters ('X' = filled block)
         static final Map<Character, String[]> GLYPHS = new HashMap<>();

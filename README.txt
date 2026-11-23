@@ -10,7 +10,7 @@ WINDOWS EXE
     build-exe.bat
 
 RUN (Java 11 or newer)
-  cd PacManJava
+  cd code
   java PacManGame.java
 or
   javac PacManGame.java
