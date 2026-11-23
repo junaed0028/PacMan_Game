@@ -16,12 +16,11 @@ if not exist "%JAVAC%" (
 
 cd /d "%ROOT%"
 if exist build rmdir /s /q build
-if exist dist rmdir /s /q dist
 mkdir build\classes
 mkdir build\classes\fonts
 mkdir build\classes\images
 mkdir build\input
-mkdir dist
+mkdir build\package
 
 "%JAVAC%" -encoding UTF-8 -d build\classes "%CODE%\PacManGame.java"
 if errorlevel 1 exit /b 1
@@ -42,11 +41,22 @@ if errorlevel 1 exit /b 1
   --input "%ROOT%build\input" ^
   --main-jar PacMan.jar ^
   --main-class PacManGame ^
-  --dest "%ROOT%dist"
+  --dest "%ROOT%build\package"
+if errorlevel 1 exit /b 1
+
+if exist "%ROOT%PacMan.exe" attrib -r "%ROOT%PacMan.exe"
+if exist "%ROOT%PacMan.exe" del /f /q "%ROOT%PacMan.exe"
+if exist "%ROOT%app" rmdir /s /q "%ROOT%app"
+if exist "%ROOT%runtime" rmdir /s /q "%ROOT%runtime"
+move /y "%ROOT%build\package\PacMan\PacMan.exe" "%ROOT%PacMan.exe"
+if errorlevel 1 exit /b 1
+move /y "%ROOT%build\package\PacMan\app" "%ROOT%app"
+if errorlevel 1 exit /b 1
+move /y "%ROOT%build\package\PacMan\runtime" "%ROOT%runtime"
 if errorlevel 1 exit /b 1
 
 echo.
 echo Pac-Man executable created at:
-echo %ROOT%dist\PacMan\PacMan.exe
+echo %ROOT%PacMan.exe
 rmdir /s /q "%ROOT%build"
 exit /b 0
