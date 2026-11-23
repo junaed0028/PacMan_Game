@@ -1413,7 +1413,7 @@ public class PacManGame extends JFrame {
                     g.dispose();
                 }
             };
-            JLabel heading = label("TOP 10 LEADERBOARD", pixel(14f), YELLOW400);
+            JLabel heading = label("TOP 10 LEADERBOARD", vt(22f), YELLOW400);
             title.add(new JLabel(trophy));
             title.add(heading);
             add(title, BorderLayout.NORTH);
@@ -1439,7 +1439,7 @@ public class PacManGame extends JFrame {
             table.setIntercellSpacing(new Dimension(1, 1));
             table.setBackground(SLATE950);
             table.setForeground(SLATE200);
-            table.setFont(pixel(9f));
+            table.setFont(vt(18f));
             table.setSelectionBackground(SLATE950);
             table.setSelectionForeground(SLATE200);
             table.setRowSelectionAllowed(false);
@@ -1455,7 +1455,7 @@ public class PacManGame extends JFrame {
                         super.getTableCellRendererComponent(source, value, false, false, row, column);
                         boolean empty = row >= records.size();
                         boolean first = row == 0 && !records.isEmpty();
-                        setFont(pixel(9f));
+                        setFont(vt(18f));
                         setHorizontalAlignment(column == 1 ? SwingConstants.LEFT : SwingConstants.CENTER);
                         setBorder(column == 1 ? new EmptyBorder(0, 8, 0, 4) : new EmptyBorder(0, 2, 0, 2));
                         setOpaque(true);
@@ -1477,13 +1477,13 @@ public class PacManGame extends JFrame {
             header.setPreferredSize(new Dimension(10, 32));
             header.setBackground(new Color(0x0C, 0x14, 0x26));
             header.setForeground(CYAN300);
-            header.setFont(pixel(9f));
+            header.setFont(vt(16f));
             header.setBorder(new LineBorder(new Color(0x7C, 0x3A, 0xB8, 140), 1));
             DefaultTableCellRenderer headerRenderer = new DefaultTableCellRenderer();
             headerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
             headerRenderer.setForeground(CYAN300);
             headerRenderer.setBackground(new Color(0x0C, 0x14, 0x26));
-            headerRenderer.setFont(pixel(9f));
+            headerRenderer.setFont(vt(16f));
             headerRenderer.setBorder(new EmptyBorder(2, 2, 2, 2));
             header.setDefaultRenderer(headerRenderer);
 
