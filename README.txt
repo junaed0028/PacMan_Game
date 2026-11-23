@@ -1,5 +1,14 @@
 PAC-MAN ARCADE EDITION  (Java Swing)
 
+WINDOWS EXE
+  Run: dist\PacMan\PacMan.exe
+  Java is bundled with this executable, so Java does not need to be installed.
+  Keep the dist\PacMan folder together: the exe uses the runtime and app files
+  inside this folder.
+
+  Rebuild the executable from Windows Command Prompt:
+    build-exe.bat
+
 RUN (Java 11 or newer)
   cd PacManJava
   java PacManGame.java
